@@ -1,9 +1,11 @@
-function Signin() {
+import Layout from '../../Components/Layout'
+
+function SignIn() {
   return (
-    <div className='bg-blue-500 text-white p-4'>
-      Sign In
-    </div>
+    <Layout>
+      SignIn
+    </Layout>
   )
 }
 
-export default Signin
+export default SignIn
