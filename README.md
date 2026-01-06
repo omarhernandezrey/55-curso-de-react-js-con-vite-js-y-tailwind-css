@@ -15,3 +15,13 @@ The React Compiler is not enabled on this template because of its impact on dev 
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
 # 55-curso-de-react-js-con-vite-js-y-tailwind-css
+
+## Progreso del Curso
+
+### 8 Consumiendo la FakeStore API para pintar cards
+- Se implementó la llamada a la API `https://api.escuelajs.co/api/v1/products` usando `useEffect` y `fetch`.
+- Los datos obtenidos se almacenan en un estado local y se mapean para renderizar componentes `Card`.
+- Se corrigieron problemas de importación (case-sensitivity) en el componente `Card`.
+- Se añadieron directivas de Tailwind CSS en `src/index.css` para corregir estilos.
+- Se añadió manejo de errores y limpieza de URLs para las imágenes de los productos que vienen de la API.
+
