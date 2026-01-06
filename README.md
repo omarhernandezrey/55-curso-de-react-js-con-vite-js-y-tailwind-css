@@ -25,3 +25,9 @@ If you are developing a production application, we recommend using TypeScript wi
 - Se añadieron directivas de Tailwind CSS en `src/index.css` para corregir estilos.
 - Se añadió manejo de errores y limpieza de URLs para las imágenes de los productos que vienen de la API.
 
+### 9 Contexto global de la aplicación
+- Se creó el archivo `src/Context/index.jsx` para inicializar el contexto global `ShoppingCartContext`.
+- Se implementó el `ShoppingCartProvider` para envolver la aplicación.
+- Se actualizó `src/Pages/App/index.jsx` para usar el proveedor de contexto y dar acceso global a los estados definidos.
+
+
