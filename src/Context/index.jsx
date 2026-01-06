@@ -1,14 +1,17 @@
-import { Children, createContext } from "react";
+/* eslint-disable react-refresh/only-export-components */
+import { createContext, useState } from 'react'
 
-const ShoppingCartContext = createContext();
+export const ShoppingCartContext = createContext()
 
 export const ShoppingCartProvider = ({children}) => {
-  const context = {};
+  const [count, setCount] = useState(0)
+
   return (
-    <ShoppingCartContext.Provider value={context}>
+    <ShoppingCartContext.Provider value={{
+      count,
+      setCount
+    }}>
       {children}
     </ShoppingCartContext.Provider>
   )
-}   
-
-export default ShoppingCartContext;
+}

@@ -29,7 +29,10 @@ If you are developing a production application, we recommend using TypeScript wi
 - Se creó el archivo `src/Context/index.jsx` para inicializar el contexto global `ShoppingCartContext`.
 - Se implementó el `ShoppingCartProvider` para envolver la aplicación.
 - Se actualizó `src/Pages/App/index.jsx` para usar el proveedor de contexto y dar acceso global a los estados definidos.
-- **Fix:** Se solucionó definitivamente el error de importación _case-sensitive_ ("Card" vs "card") agregando `jsconfig.json` y renombrando la carpeta correctamente.
+### 10 Contador de productos en el carrito
+- Se consumió el `ShoppingCartContext` en el componente `Navbar` para mostrar el número de productos (`context.count`).
+- Se consumió el `ShoppingCartContext` en el componente `Card` para actualizar el contador al hacer clic en el botón `+`.
+- Se configuró el estado inicial del contador en 0 dentro del `ShoppingCartProvider`.
 - Se actualizó `src/Pages/App/index.jsx` para usar el proveedor de contexto y dar acceso global a los estados definidos.
 
 
