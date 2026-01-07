@@ -33,6 +33,12 @@ If you are developing a production application, we recommend using TypeScript wi
 - Se consumió el `ShoppingCartContext` en el componente `Navbar` para mostrar el número de productos (`context.count`).
 - Se consumió el `ShoppingCartContext` en el componente `Card` para actualizar el contador al hacer clic en el botón `+`.
 - Se configuró el estado inicial del contador en 0 dentro del `ShoppingCartProvider`.
-- Se actualizó `src/Pages/App/index.jsx` para usar el proveedor de contexto y dar acceso global a los estados definidos.
+
+### 11 Abriendo el detalle de cada producto
+- Se creó el componente `ProductDetail` para mostrar la información detallada de un producto.
+- Se instaló la librería `@heroicons/react` para usar iconos en la interfaz (como la 'X' para cerrar).
+- Se integró el componente `ProductDetail` en la página principal `Home`.
+- Se añadieron estilos específicos para el componente en `src/Components/ProductDetail/styles.css`.
+
 
 
