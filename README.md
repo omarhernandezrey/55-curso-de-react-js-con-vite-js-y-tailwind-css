@@ -40,5 +40,11 @@ If you are developing a production application, we recommend using TypeScript wi
 - Se integró el componente `ProductDetail` en la página principal `Home`.
 - Se añadieron estilos específicos para el componente en `src/Components/ProductDetail/styles.css`.
 
+### 12 Reto heroicons con TailwindCSS
+- Se reemplazó el texto "+" en el componente `Card` por el ícono `PlusIcon` de `@heroicons/react`.
+- Se reemplazó el emoji del carrito "🛒" en el componente `Navbar` por el ícono `ShoppingBagIcon`.
+- Se aplicaron clases de Tailwind CSS para estilizar los íconos (tamaño y color).
+
+
 
 
