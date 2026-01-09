@@ -52,6 +52,14 @@ If you are developing a production application, we recommend using TypeScript wi
 - Se implementó la lógica para cerrar el detalle al hacer clic en el incono 'X'.
 - Solución de bugs: Manejo condicional de la carga de imágenes para evitar errores cuando `productToShow` está vacío.
 
+### 14 Mostrando productos en ProductDetail
+- Se mejoró significativamente el diseño del `ProductDetail` para una apariencia más moderna y profesional (sombras, bordes redondeados, layout sticky).
+- Se implementó un efecto de **lupa (zoom)** interactivo sobre la imagen del producto.
+- Se optimizó la visualización para evitar scroll general, utilizando un diseño flexible que se adapta a la ventana.
+- Se aseguró la consistencia visual de la etiqueta de categoría con las tarjetas (`Cards`).
+- Se eliminó el archivo CSS externo, migrando todos los estilos a clases de utilidad de **Tailwind CSS**.
+
+
 
 
 
