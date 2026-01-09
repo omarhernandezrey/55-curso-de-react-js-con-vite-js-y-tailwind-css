@@ -45,6 +45,14 @@ If you are developing a production application, we recommend using TypeScript wi
 - Se reemplazó el emoji del carrito "🛒" en el componente `Navbar` por el ícono `ShoppingBagIcon`.
 - Se aplicaron clases de Tailwind CSS para estilizar los íconos (tamaño y color).
 
+### 13 Maquetando el ProductDetail
+- Se añadieron estados al contexto global `ShoppingCartContext` para manejar la visibilidad del detalle del producto (`isProductDetailOpen`) y el producto seleccionado (`productToShow`).
+- Se maquetó el componente `ProductDetail` para mostrar dinámicamente la imagen, título, precio y descripción del producto seleccionado.
+- Se actualizó el componente `Card` para que al hacer clic en la tarjeta se abra el `ProductDetail` con la información correspondiente.
+- Se implementó la lógica para cerrar el detalle al hacer clic en el incono 'X'.
+- Solución de bugs: Manejo condicional de la carga de imágenes para evitar errores cuando `productToShow` está vacío.
+
+
 
 
 
