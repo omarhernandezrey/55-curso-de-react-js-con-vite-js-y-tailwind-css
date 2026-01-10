@@ -1,6 +1,6 @@
-/* eslint-disable react-refresh/only-export-components */
 import { createContext, useState } from 'react'
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const ShoppingCartContext = createContext()
 
 export const ShoppingCartProvider = ({children}) => {
@@ -15,6 +15,9 @@ export const ShoppingCartProvider = ({children}) => {
   // Product Detail · Show product
   const [productToShow, setProductToShow] = useState({})
 
+  // Shopping Cart · Add products to cart
+  const [cartProducts, setCartProducts] = useState([])
+
   return (
     <ShoppingCartContext.Provider value={{
       count,
@@ -23,7 +26,9 @@ export const ShoppingCartProvider = ({children}) => {
       closeProductDetail,
       isProductDetailOpen,
       productToShow,
-      setProductToShow
+      setProductToShow,
+      cartProducts,
+      setCartProducts
     }}>
       {children}
     </ShoppingCartContext.Provider>

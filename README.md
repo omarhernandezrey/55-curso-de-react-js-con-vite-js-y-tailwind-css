@@ -59,6 +59,12 @@ If you are developing a production application, we recommend using TypeScript wi
 - Se aseguró la consistencia visual de la etiqueta de categoría con las tarjetas (`Cards`).
 - Se eliminó el archivo CSS externo, migrando todos los estilos a clases de utilidad de **Tailwind CSS**.
 
+### 15 Agregando productos al carrito
+- Se actualizó el la lógica en el componente `Card` para agregar productos reales al array `cartProducts` del contexto global.
+- Se implementó `event.stopPropagation()` en el botón "+" de la tarjeta para evitar que se abra el detalle del producto al mismo tiempo que se agrega al carrito.
+- Se configuró la acción para cerrar el `ProductDetail` automáticamente al agregar un producto al carrito, manteniendo la interfaz limpia.
+- Se verificó que el contador del carrito (`count`) y la lista de productos (`cartProducts`) se actualicen correctamente en el estado global.
+
 
 
 
