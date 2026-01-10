@@ -75,6 +75,12 @@ If you are developing a production application, we recommend using TypeScript wi
     - Se detenga la propagación del evento click para no reabrir el `ProductDetail`.
 - Se añadieron estilos para posicionar el menú lateral a la derecha (`fixed right-0`) con scroll independiente si es necesario.
 
+### 17 Componente OrderCard
+- Se creó el componente `OrderCard` para representar visualmente cada artículo dentro del carrito de compras (`CheckoutSideMenu`).
+- El componente muestra la imagen, título y precio del producto, alineados horizontalmente.
+- Se implementó el icono `XMarkIcon` de Heroicons, preparado para la futura funcionalidad de eliminar productos del carrito.
+- Se integró `OrderCard` dentro de `CheckoutSideMenu`, iterando sobre el array `cartProducts` del contexto global para renderizar la lista dinámica de productos seleccionados.
+
 
 
 
