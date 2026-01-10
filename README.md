@@ -65,6 +65,16 @@ If you are developing a production application, we recommend using TypeScript wi
 - Se configuró la acción para cerrar el `ProductDetail` automáticamente al agregar un producto al carrito, manteniendo la interfaz limpia.
 - Se verificó que el contador del carrito (`count`) y la lista de productos (`cartProducts`) se actualicen correctamente en el estado global.
 
+### 16 SideMenu del carrito de compras
+- Se creó el componente `CheckoutSideMenu` que servirá para visualizar los productos agregados al carrito de compras.
+- Se agregaron estados en el `ShoppingCartContext` para controlar la apertura y cierre del `CheckoutSideMenu` (`isCheckoutSideMenuOpen`).
+- Se integró el `CheckoutSideMenu` en `App/index.jsx` para que esté disponible globalmente junto al `Navbar`.
+- Se actualizó el componente `Card` para que al agregar un producto:
+    - Se abra automáticamente el `CheckoutSideMenu`.
+    - Se cierre el `ProductDetail` (si estaba abierto).
+    - Se detenga la propagación del evento click para no reabrir el `ProductDetail`.
+- Se añadieron estilos para posicionar el menú lateral a la derecha (`fixed right-0`) con scroll independiente si es necesario.
+
 
 
 
