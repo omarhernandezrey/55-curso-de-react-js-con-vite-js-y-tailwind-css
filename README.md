@@ -81,6 +81,14 @@ If you are developing a production application, we recommend using TypeScript wi
 - Se implementó el icono `XMarkIcon` de Heroicons, preparado para la futura funcionalidad de eliminar productos del carrito.
 - Se integró `OrderCard` dentro de `CheckoutSideMenu`, iterando sobre el array `cartProducts` del contexto global para renderizar la lista dinámica de productos seleccionados.
 
+### 18 Evitando productos duplicados en el carrito
+- Se modificó el componente `Card` para verificar si un producto ya existe en el carrito (`cartProducts`).
+- Se implementó la función `renderIcon` que renderiza condicionalmente:
+    - Un icono de **Check** (✓) con fondo negro si el producto ya está en el carrito.
+    - Un icono de **Más** (+) con fondo blanco si el producto se puede agregar.
+- Se deshabilitó la opción de agregar múltiples veces el mismo producto desde la tarjeta.
+- Se mejoró la UX proporcionando feedback visual inmediato sobre los productos seleccionados.
+
 
 
 
