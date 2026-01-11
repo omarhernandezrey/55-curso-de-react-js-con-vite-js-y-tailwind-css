@@ -89,6 +89,12 @@ If you are developing a production application, we recommend using TypeScript wi
 - Se deshabilitó la opción de agregar múltiples veces el mismo producto desde la tarjeta.
 - Se mejoró la UX proporcionando feedback visual inmediato sobre los productos seleccionados.
 
+### 19 Eliminar productos del carrito
+- Se implementó la función `handleDelete` en `CheckoutSideMenu` para eliminar artículos del estado `cartProducts`.
+- Se pasó la función `handleDelete` como prop al componente `OrderCard`.
+- En `OrderCard`, se asignó el evento `onClick` al icono `XMarkIcon` para ejecutar la eliminación del producto específico mediante su ID.
+- Se añadió la clase `overflow-y-scroll` al contenedor de la lista de productos en el `CheckoutSideMenu` para permitir el desplazamiento cuando hay muchos artículos.
+
 
 
 
