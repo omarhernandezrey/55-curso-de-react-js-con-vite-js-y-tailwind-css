@@ -101,6 +101,15 @@ If you are developing a production application, we recommend using TypeScript wi
 - Se integró `totalPrice` en el componente `CheckoutSideMenu` para calcular y mostrar el costo total de la orden en tiempo real.
 - Se añadieron estilos para destacar visualmente el total en la parte inferior del menú lateral.
 
+### 21 Flujo para crear una nueva orden
+- Se añadió un nuevo estado `order` al `ShoppingCartContext` para almacenar el historial de órdenes realizadas.
+- Se implementó la función `handleCheckout` en el `CheckoutSideMenu`, la cual:
+    - Crea un objeto `orderToAdd` con la fecha, lista de productos, cantidad total y precio total.
+    - Agrega este objeto al array de órdenes global.
+    - Limpia el carrito de compras (`setCartProducts([])`) después de realizar el checkout.
+- Se añadió un botón "Checkout" en el menú lateral que dispara el proceso de creación de orden.
+- Se ajustó el layout del `CheckoutSideMenu` para que el botón y el total permanezcan fijos en la parte inferior.
+
 
 
 
