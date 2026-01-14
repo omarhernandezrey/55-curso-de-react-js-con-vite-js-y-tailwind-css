@@ -116,6 +116,12 @@ If you are developing a production application, we recommend using TypeScript wi
 - Se implementó la lógica para obtener la última orden del array `context.order` (`slice(-1)[0]`) y renderizar sus productos usando el componente `OrderCard`.
 - Se reutilizó el componente `OrderCard` en modo "lectura" (sin opción de eliminar) para mostrar el historial en la página de confirmación.
 
+### 23 Página de MyOrders: lista de órdenes
+- Se creó el componente `OrdersCard` para mostrar un resumen visual de cada orden histórica (fecha, cantidad de productos, precio total).
+- Se actualizó la página `MyOrders` para iterar sobre el historial de órdenes (`context.order`) y renderizar una lista de componentes `OrdersCard`.
+- Se implementó la navegación con `Link` de `react-router-dom` envolviendo cada tarjeta, permitiendo al usuario acceder al detalle de una orden específica (aunque la vista de detalle se implementará en el siguiente paso).
+- Se corrigieron errores de sintaxis en el renderizado del mapa de órdenes y nombres de archivo.
+
 
 
 
