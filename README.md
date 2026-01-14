@@ -95,6 +95,12 @@ If you are developing a production application, we recommend using TypeScript wi
 - En `OrderCard`, se asignó el evento `onClick` al icono `XMarkIcon` para ejecutar la eliminación del producto específico mediante su ID.
 - Se añadió la clase `overflow-y-scroll` al contenedor de la lista de productos en el `CheckoutSideMenu` para permitir el desplazamiento cuando hay muchos artículos.
 
+### 20 Suma total de productos en el carrito
+- Se creó la carpeta `src/utils` y el archivo `index.js` para alojar funciones de utilidad generales.
+- Se implementó la función `totalPrice` que recibe un array de productos y retorna la suma de sus precios.
+- Se integró `totalPrice` en el componente `CheckoutSideMenu` para calcular y mostrar el costo total de la orden en tiempo real.
+- Se añadieron estilos para destacar visualmente el total en la parte inferior del menú lateral.
+
 
 
 
