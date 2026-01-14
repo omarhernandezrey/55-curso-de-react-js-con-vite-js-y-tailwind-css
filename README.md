@@ -110,6 +110,12 @@ If you are developing a production application, we recommend using TypeScript wi
 - Se añadió un botón "Checkout" en el menú lateral que dispara el proceso de creación de orden.
 - Se ajustó el layout del `CheckoutSideMenu` para que el botón y el total permanezcan fijos en la parte inferior.
 
+### 22 Checkout de productos en el carrito
+- Se configuró la ruta `/my-orders/last` en `src/Pages/App/index.jsx` para mostrar la última orden generada.
+- Se actualizó la página `MyOrder` para visualizar los detalles de la orden recién creada (resumen de compra).
+- Se implementó la lógica para obtener la última orden del array `context.order` (`slice(-1)[0]`) y renderizar sus productos usando el componente `OrderCard`.
+- Se reutilizó el componente `OrderCard` en modo "lectura" (sin opción de eliminar) para mostrar el historial en la página de confirmación.
+
 
 
 
