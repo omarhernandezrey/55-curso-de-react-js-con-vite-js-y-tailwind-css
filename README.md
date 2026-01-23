@@ -122,6 +122,16 @@ If you are developing a production application, we recommend using TypeScript wi
 - Se implementó la navegación con `Link` de `react-router-dom` envolviendo cada tarjeta, permitiendo al usuario acceder al detalle de una orden específica (aunque la vista de detalle se implementará en el siguiente paso).
 - Se corrigieron errores de sintaxis en el renderizado del mapa de órdenes y nombres de archivo.
 
+### 24 Página de MyOrder: orden individual
+- Se implementó la página `MyOrder` (`src/Pages/MyOrder/index.jsx`) para mostrar el detalle completo de una orden específica.
+- Se integró la navegación mediante `react-router-dom` con rutas dinámicas:
+    - `/my-orders/last`: Muestra la última orden creada.
+    - `/my-orders/:id`: Muestra la orden correspondiente al índice proporcionado.
+- Se extrajo el índice de la orden desde la URL usando `window.location.pathname`.
+- Se reutilizó el componente `OrderCard` para renderizar cada producto dentro de la orden seleccionada, accediendo al array `context.order[index].products`.
+- Se implementó un botón de retorno (`ChevronLeftIcon` de Heroicons) que permite navegar de vuelta a la página `/my-orders`.
+- Se utilizó el componente `Layout` para mantener la consistencia visual de toda la aplicación.
+
 
 
 
