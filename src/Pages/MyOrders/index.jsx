@@ -1,28 +1,22 @@
-import { useContext } from 'react'
-import { Link } from 'react-router-dom'
-import Layout from '../../Components/Layout'
-import { ShoppingCartContext } from '../../Context'
-import OrdersCard from '../../Components/OrdersCard'
+import { ChevronRightIcon } from "@heroicons/react/24/solid";
 
-function MyOrders() {
-  const context = useContext(ShoppingCartContext)
+const OrdersCard = (props) => {
+  const { totalPrice, totalProducts } = props;
 
   return (
-    <Layout>
-      <div className='flex items-center justify-center relative w-80'>
-        <h1>My Orders</h1>
+    <div className="flex justify-between items-center mb-3 border border-black rounded-lg p-4 w-80">
+      <div className="flex justify-between w-full">
+        <p className="flex flex-col">
+          <span className="font-light">01.02.23</span>
+          <span className="font-light">{totalProducts} articles</span>
+        </p>
+        <p className="flex items-center gap-2">
+          <span className="font-medium text-2xl">${totalPrice}</span>
+          <ChevronRightIcon className="h-6 w-6 text-black cursor-pointer" />
+        </p>
       </div>
-      {
-        context.order.map((order, index) => (
-          <Link key={index} to={`/my-orders/${index}`}>
-            <OrdersCard
-              totalPrice={order.totalPrice}
-              totalProducts={order.totalProducts} />
-          </Link>
-        ))
-      }
-    </Layout>
-  )
-}
+    </div>
+  );
+};
 
-export default MyOrders
+export default OrdersCard;
