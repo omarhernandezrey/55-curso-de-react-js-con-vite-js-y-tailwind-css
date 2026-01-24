@@ -225,3 +225,43 @@ Archivos clave:
 - Redirects SPA: [public/\_redirects](public/_redirects)
 - Scripts de build: [package.json](package.json)
 - Config de Vite: [vite.config.js](vite.config.js)
+
+#### Deploy en Vercel
+
+- Configuración recomendada en Vercel (Dashboard):
+  - **Framework Preset**: Vite (normalmente lo detecta solo)
+  - **Build Command**: `npm run build`
+  - **Output Directory**: `dist`
+  - **Install Command**: `npm install` (por defecto)
+
+##### `vercel.json` para React Router (SPA)
+
+Para que al refrescar rutas internas (por ejemplo `/my-orders/last`) no dé 404, crea el archivo `vercel.json` en la raíz del proyecto con este contenido:
+
+```json
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
+  ]
+}
+```
+
+Si en el futuro agregas endpoints en `/api`, puedes usar esta variante para excluirlos del rewrite:
+
+```json
+{
+  "rewrites": [
+    {
+      "source": "/((?!api/.*).*)",
+      "destination": "/"
+    }
+  ]
+}
+```
+
+Archivos clave:
+
+- Config SPA Vercel: [vercel.json](vercel.json)
