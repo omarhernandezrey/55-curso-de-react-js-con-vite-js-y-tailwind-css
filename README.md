@@ -176,3 +176,9 @@ If you are developing a production application, we recommend using TypeScript wi
 - Se agregó el estado `filteredItems` para almacenar la lista filtrada y renderizarla cuando el usuario escribe.
 - Se conectó el input en `Home` para actualizar `searchByTitle` con `onChange` y se decidió entre `items` vs `filteredItems` al renderizar.
 - Se usó `useEffect` para recalcular el filtrado cuando cambian `items` o `searchByTitle`.
+
+Archivos clave:
+
+- `Home`: [src/Pages/Home/index.jsx](src/Pages/Home/index.jsx)
+- `Context Provider`: [src/Context/index.jsx](src/Context/index.jsx)
+- `Context`: [src/Context/ShoppingCartContext.js](src/Context/ShoppingCartContext.js)
