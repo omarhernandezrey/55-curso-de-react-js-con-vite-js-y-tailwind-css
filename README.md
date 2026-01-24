@@ -168,3 +168,11 @@ If you are developing a production application, we recommend using TypeScript wi
   - `src/Context/index.jsx`: Contiene únicamente el componente `ShoppingCartProvider`.
 - Esta separación permite que Vite optimice el Fast Refresh, mejorando la experiencia de desarrollo al recargar solo los componentes modificados.
 - Se mantuvo toda la funcionalidad del contexto sin cambios, asegurando compatibilidad total con el resto de la aplicación.
+
+### 27 Filtrando títulos con JavaScript
+
+- Se añadió el estado `searchByTitle` en el contexto para guardar el texto del input del buscador.
+- Se implementó un filtrado por título con `Array.prototype.filter()` + `includes()` convirtiendo a minúsculas para hacerlo case-insensitive.
+- Se agregó el estado `filteredItems` para almacenar la lista filtrada y renderizarla cuando el usuario escribe.
+- Se conectó el input en `Home` para actualizar `searchByTitle` con `onChange` y se decidió entre `items` vs `filteredItems` al renderizar.
+- Se usó `useEffect` para recalcular el filtrado cuando cambian `items` o `searchByTitle`.
