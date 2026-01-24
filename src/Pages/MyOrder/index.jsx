@@ -16,13 +16,17 @@ function MyOrder() {
 
   return (
     <Layout>
-      <div className="flex items-center justify-center relative w-80 mb-6">
-        <Link to="/my-orders" className="absolute left-0">
-          <ChevronLeftIcon className="h-6 w-6 text-black cursor-pointer" />
+      <header className="grid grid-cols-3 items-center w-full max-w-md mx-auto mb-6">
+        <Link to="/my-orders" className="justify-self-start p-1 -ml-1">
+          <ChevronLeftIcon className="h-6 w-6 text-black" />
         </Link>
-        <h1>My Order</h1>
-      </div>
-      <div className="flex flex-col w-80">
+        <h1 className="justify-self-center text-xl sm:text-2xl font-medium">
+          My Order
+        </h1>
+        <div />
+      </header>
+
+      <section className="flex flex-col w-full max-w-md mx-auto gap-3">
         {currentOrder?.products.map((product) => (
           <OrderCard
             key={product.id}
@@ -32,17 +36,18 @@ function MyOrder() {
             price={product.price}
           />
         ))}
-      </div>
-      <div className="flex flex-col w-80 mt-6 pt-4 border-t border-gray-200">
+      </section>
+
+      <section className="w-full max-w-md mx-auto mt-6 rounded-lg border border-black/10 bg-white p-4">
         <div className="flex justify-between mb-2">
-          <span className="font-light">Total products:</span>
+          <span className="text-sm text-black/70">Total products</span>
           <span className="font-medium">{currentOrder?.totalProducts}</span>
         </div>
-        <div className="flex justify-between">
-          <span className="font-light text-lg">Total:</span>
-          <span className="font-bold text-lg">${currentOrder?.totalPrice}</span>
+        <div className="flex justify-between items-baseline">
+          <span className="text-sm text-black/70">Total</span>
+          <span className="font-bold text-xl">${currentOrder?.totalPrice}</span>
         </div>
-      </div>
+      </section>
     </Layout>
   );
 }

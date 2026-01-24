@@ -49,6 +49,13 @@ const isBadImageUrl = (url) => {
     const hostname = parsed.hostname.toLowerCase();
     const pathname = parsed.pathname.toLowerCase();
 
+    // Si no parece una imagen (no tiene extensión), mejor usar fallback.
+    // Esto evita requests a endpoints tipo ".../images" o placeholders que suelen fallar.
+    const looksLikeImageFile = /\.(png|jpe?g|webp|gif|avif|svg)$/i.test(
+      pathname,
+    );
+    if (!looksLikeImageFile) return true;
+
     if (hostname === "placeimg.com" || hostname.endsWith(".placeimg.com"))
       return true;
     if (hostname === "i.imgurm" || hostname.endsWith(".imgurm")) return true;

@@ -31,9 +31,9 @@ const CheckoutSideMenu = () => {
 
   return (
     <aside
-      className={`${context.isCheckoutSideMenuOpen ? "flex" : "hidden"} checkout-side-menu flex-col fixed right-0 border border-black rounded-lg bg-white`}
+      className={`${context.isCheckoutSideMenuOpen ? "flex" : "hidden"} checkout-side-menu flex-col fixed right-0 z-30 border border-black rounded-lg bg-white`}
     >
-      <div className="flex justify-between items-center p-6">
+      <div className="flex justify-between items-center p-6 bg-white/95 backdrop-blur border-b border-black/10">
         <h2 className="font-medium text-xl">My Order</h2>
         <div>
           <XMarkIcon
@@ -42,7 +42,7 @@ const CheckoutSideMenu = () => {
           ></XMarkIcon>
         </div>
       </div>
-      <div className="px-6 overflow-y-scroll flex-1">
+      <div className="px-6 py-4">
         {context.cartProducts.map((product) => (
           <OrderCard
             key={product.id}
@@ -54,7 +54,7 @@ const CheckoutSideMenu = () => {
           />
         ))}
       </div>
-      <div className="px-6 mb-6">
+      <div className="px-6 mb-6 pt-4 border-t border-black/10">
         <p className="flex justify-between items-center mb-2">
           <span className="font-light">Total:</span>
           <span className="font-medium text-2xl">

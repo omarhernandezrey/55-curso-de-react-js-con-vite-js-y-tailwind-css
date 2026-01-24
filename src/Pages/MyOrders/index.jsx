@@ -9,17 +9,20 @@ function MyOrders() {
 
   return (
     <Layout>
-      <div className="flex items-center justify-center relative w-80">
-        <h1>My Orders</h1>
-      </div>
-      {context.order.map((order, index) => (
-        <Link key={index} to={`/my-orders/${index}`}>
-          <OrdersCard
-            totalPrice={order.totalPrice}
-            totalProducts={order.totalProducts}
-          />
-        </Link>
-      ))}
+      <header className="flex items-center justify-center relative w-full max-w-md mx-auto mb-6">
+        <h1 className="text-xl sm:text-2xl font-medium">My Orders</h1>
+      </header>
+
+      <section className="flex flex-col w-full max-w-md mx-auto gap-3">
+        {context.order.map((order, index) => (
+          <Link key={index} to={`/my-orders/${index}`} className="w-full">
+            <OrdersCard
+              totalPrice={order.totalPrice}
+              totalProducts={order.totalProducts}
+            />
+          </Link>
+        ))}
+      </section>
     </Layout>
   );
 }
