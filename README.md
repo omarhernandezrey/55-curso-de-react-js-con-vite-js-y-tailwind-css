@@ -182,3 +182,17 @@ Archivos clave:
 - `Home`: [src/Pages/Home/index.jsx](src/Pages/Home/index.jsx)
 - `Context Provider`: [src/Context/index.jsx](src/Context/index.jsx)
 - `Context`: [src/Context/ShoppingCartContext.js](src/Context/ShoppingCartContext.js)
+
+### 28 Filtrando categorías con JavaScript
+
+- Se añadió el estado `searchByCategory` en el contexto para guardar la categoría seleccionada.
+- Se implementó el filtrado por categoría usando `Array.prototype.filter()` sobre `item.category.name` y `includes()` (case-insensitive).
+- Se extendió `filterBy` para soportar `BY_CATEGORY` y `BY_TITLE_AND_CATEGORY` (combinando ambos filtros).
+- Se conectó el `Navbar` para actualizar `searchByCategory` al hacer clic en cada categoría (y limpiar con “All”).
+- El `useEffect` del contexto recalcula `filteredItems` cuando cambian `items`, `searchByTitle` o `searchByCategory`.
+
+Archivos clave:
+
+- `Navbar (categorías)`: [src/Components/Navbar/index.jsx](src/Components/Navbar/index.jsx)
+- `Context (filtros)`: [src/Context/index.jsx](src/Context/index.jsx)
+- `Home (render)`: [src/Pages/Home/index.jsx](src/Pages/Home/index.jsx)

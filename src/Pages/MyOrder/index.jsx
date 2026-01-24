@@ -27,7 +27,9 @@ function MyOrder() {
             key={product.id}
             id={product.id}
             title={product.title}
-            imageUrl={product.images}
+            imageUrl={
+              Array.isArray(product.images) ? product.images[0] : product.images
+            }
             price={product.price}
           />
         ))}

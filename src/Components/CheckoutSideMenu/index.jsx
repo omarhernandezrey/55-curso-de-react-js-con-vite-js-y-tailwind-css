@@ -15,6 +15,7 @@ const CheckoutSideMenu = () => {
     );
     context.setCartProducts(filteredProducts);
   };
+
   const handleCheckout = () => {
     const orderToAdd = {
       date: "01.02.23",
@@ -22,9 +23,10 @@ const CheckoutSideMenu = () => {
       totalProducts: context.cartProducts.length,
       totalPrice: totalPrice(context.cartProducts),
     };
+
     context.setOrder([...context.order, orderToAdd]);
     context.setCartProducts([]);
-    /* context.closeCheckoutSideMenu() */
+    context.setSearchByTitle(null);
   };
 
   return (
@@ -46,7 +48,9 @@ const CheckoutSideMenu = () => {
             key={product.id}
             id={product.id}
             title={product.title}
-            imageUrl={product.images}
+            imageUrl={
+              Array.isArray(product.images) ? product.images[0] : product.images
+            }
             price={product.price}
             handleDelete={handleDelete}
           />
@@ -61,8 +65,8 @@ const CheckoutSideMenu = () => {
         </p>
         <Link to="/my-orders/last">
           <button
+            className="bg-black py-3 text-white w-full rounded-lg"
             onClick={() => handleCheckout()}
-            className="w-full bg-black text-white py-3 mt-3 rounded-lg font-medium"
           >
             Checkout
           </button>

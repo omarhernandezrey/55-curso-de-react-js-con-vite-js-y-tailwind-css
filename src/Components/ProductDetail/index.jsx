@@ -6,6 +6,10 @@ import "./styles.css";
 const ProductDetail = () => {
   const context = useContext(ShoppingCartContext);
 
+  const imageUrl = Array.isArray(context.productToShow?.images)
+    ? context.productToShow.images[0]
+    : context.productToShow?.images;
+
   return (
     <aside
       className={`${context.isProductDetailOpen ? "flex" : "hidden"} product-detail flex-col fixed right-0 border border-black rounded-lg bg-white`}
@@ -22,7 +26,7 @@ const ProductDetail = () => {
       <figure className="px-6">
         <img
           className="w-full h-full rounded-lg"
-          src={context.productToShow.images}
+          src={imageUrl ?? undefined}
           alt={context.productToShow.title}
         />
       </figure>

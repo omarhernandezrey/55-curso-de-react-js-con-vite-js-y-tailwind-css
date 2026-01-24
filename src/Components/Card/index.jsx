@@ -5,6 +5,10 @@ import { ShoppingCartContext } from "../../Context/ShoppingCartContext";
 const Card = (data) => {
   const context = useContext(ShoppingCartContext);
 
+  const imageUrl = Array.isArray(data.data?.images)
+    ? data.data.images[0]
+    : data.data?.images;
+
   const showProduct = (productDetail) => {
     context.openProductDetail();
     context.setProductToShow(productDetail);
@@ -51,7 +55,7 @@ const Card = (data) => {
         </span>
         <img
           className="w-full h-full object-cover rounded-lg"
-          src={data.data.images[0]}
+          src={imageUrl ?? undefined}
           alt={data.data.title}
         />
         {renderIcon(data.data.id)}
