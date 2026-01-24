@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 import { ShoppingCartContext } from "./ShoppingCartContext";
+import { sanitizeProductImages } from "../utils";
 
 const filteredItemsByTitle = (items, searchByTitle) => {
   return items?.filter((item) =>
@@ -70,7 +71,13 @@ export const ShoppingCartProvider = ({ children }) => {
   useEffect(() => {
     fetch("https://api.escuelajs.co/api/v1/products")
       .then((response) => response.json())
-      .then((data) => setItems(data));
+      .then((data) => {
+        const normalized = Array.isArray(data)
+          ? data.map((product) => sanitizeProductImages(product))
+          : [];
+
+        setItems(normalized);
+      });
   }, []);
 
   useEffect(() => {

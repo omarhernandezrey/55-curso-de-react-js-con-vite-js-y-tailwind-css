@@ -1,14 +1,12 @@
 import { useContext } from "react";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import { ShoppingCartContext } from "../../Context/ShoppingCartContext";
+import { getProductImageUrl } from "../../utils";
 import "./styles.css";
 
 const ProductDetail = () => {
   const context = useContext(ShoppingCartContext);
-
-  const imageUrl = Array.isArray(context.productToShow?.images)
-    ? context.productToShow.images[0]
-    : context.productToShow?.images;
+  const imageUrl = getProductImageUrl(context.productToShow);
 
   return (
     <aside

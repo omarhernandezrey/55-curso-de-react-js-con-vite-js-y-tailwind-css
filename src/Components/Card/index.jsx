@@ -1,13 +1,11 @@
 import { useContext } from "react";
 import { PlusIcon, CheckIcon } from "@heroicons/react/24/solid";
 import { ShoppingCartContext } from "../../Context/ShoppingCartContext";
+import { getProductImageUrl } from "../../utils";
 
 const Card = (data) => {
   const context = useContext(ShoppingCartContext);
-
-  const imageUrl = Array.isArray(data.data?.images)
-    ? data.data.images[0]
-    : data.data?.images;
+  const imageUrl = getProductImageUrl(data.data);
 
   const showProduct = (productDetail) => {
     context.openProductDetail();

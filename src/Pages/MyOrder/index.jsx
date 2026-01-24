@@ -4,6 +4,7 @@ import { ChevronLeftIcon } from "@heroicons/react/24/solid";
 import { ShoppingCartContext } from "../../Context/ShoppingCartContext";
 import Layout from "../../Components/Layout";
 import OrderCard from "../../Components/OrderCard";
+import { getProductImageUrl } from "../../utils";
 
 function MyOrder() {
   const context = useContext(ShoppingCartContext);
@@ -27,9 +28,7 @@ function MyOrder() {
             key={product.id}
             id={product.id}
             title={product.title}
-            imageUrl={
-              Array.isArray(product.images) ? product.images[0] : product.images
-            }
+            imageUrl={getProductImageUrl(product)}
             price={product.price}
           />
         ))}

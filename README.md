@@ -211,3 +211,17 @@ Archivos clave:
 - [src/Pages/App/index.jsx](src/Pages/App/index.jsx)
 - [src/Context/index.jsx](src/Context/index.jsx)
 - [src/Context/ShoppingCartContext.js](src/Context/ShoppingCartContext.js)
+
+### 30 Deploy de React en Netlify
+
+- Deploy para una app hecha con **Vite + React**, donde el build de producción se genera en la carpeta `dist`.
+- Configuración recomendada en Netlify:
+  - **Build command**: `npm run build`
+  - **Publish directory**: `dist`
+- Se agregó una regla de redirección tipo SPA para que **React Router** funcione al recargar la página o entrar directo a una ruta (por ejemplo `/my-orders/last`).
+
+Archivos clave:
+
+- Redirects SPA: [public/\_redirects](public/_redirects)
+- Scripts de build: [package.json](package.json)
+- Config de Vite: [vite.config.js](vite.config.js)
