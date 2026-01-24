@@ -159,3 +159,12 @@ If you are developing a production application, we recommend using TypeScript wi
 - Se estructuró la tarjeta con información clara: fecha, cantidad de artículos y precio total.
 - Se aplicaron clases de Tailwind para flexbox (`flex`, `justify-between`, `items-center`) asegurando un layout limpio y alineado.
 - Se optimizó la visualización de precios y el icono de navegación con espaciado (`gap-2`) y estilos de fuente (`font-medium`, `font-light`).
+
+### 26 Buscador de productos
+
+- Se corrigió el error de ESLint `react-refresh/only-export-components` que impedía que el Fast Refresh funcionara correctamente.
+- Se dividió el archivo `src/Context/index.jsx` en dos archivos:
+  - `src/Context/ShoppingCartContext.js`: Contiene solo la declaración del contexto `ShoppingCartContext`.
+  - `src/Context/index.jsx`: Contiene únicamente el componente `ShoppingCartProvider`.
+- Esta separación permite que Vite optimice el Fast Refresh, mejorando la experiencia de desarrollo al recargar solo los componentes modificados.
+- Se mantuvo toda la funcionalidad del contexto sin cambios, asegurando compatibilidad total con el resto de la aplicación.
