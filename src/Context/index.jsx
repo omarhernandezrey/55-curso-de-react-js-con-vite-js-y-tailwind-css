@@ -2,56 +2,6 @@ import { useState, useEffect } from "react";
 
 import { ShoppingCartContext } from "./ShoppingCartContext";
 
-const buildFallbackImageUrl = (seed) =>
-  `https://picsum.photos/seed/${encodeURIComponent(String(seed))}/640/480`;
-
-const normalizeImageUrl = (url, seed) => {
-  if (typeof url !== "string") return buildFallbackImageUrl(seed);
-
-  const trimmed = url.trim();
-  if (!trimmed) return buildFallbackImageUrl(seed);
-
-  // API sometimes includes deprecated/broken hosts or non-image endpoints.
-  if (trimmed.includes("placeimg.com")) return buildFallbackImageUrl(seed);
-  if (trimmed.includes("i.imgurm"))
-    return trimmed.replace("i.imgurm", "i.imgur.com");
-  if (
-    /^https?:\/\/api\.escuelajs\.co\/api\/v1\/products\/\d+\/images\/?$/i.test(
-      trimmed,
-    )
-  ) {
-    return buildFallbackImageUrl(seed);
-  }
-
-  try {
-    // Validate URL to avoid setting invalid src values.
-    const parsed = new URL(trimmed);
-    return parsed.toString();
-  } catch {
-    return buildFallbackImageUrl(seed);
-  }
-};
-
-const normalizeProduct = (product) => {
-  const id = product?.id ?? "product";
-  const rawImages = Array.isArray(product?.images)
-    ? product.images
-    : product?.images
-      ? [product.images]
-      : [];
-
-  const images = rawImages
-    .map((img, idx) => normalizeImageUrl(img, `${id}-${idx}`))
-    .filter(Boolean);
-
-  if (images.length === 0) images.push(buildFallbackImageUrl(id));
-
-  return {
-    ...product,
-    images,
-  };
-};
-
 const filteredItemsByTitle = (items, searchByTitle) => {
   return items?.filter((item) =>
     item.title.toLowerCase().includes(searchByTitle.toLowerCase()),
@@ -120,12 +70,7 @@ export const ShoppingCartProvider = ({ children }) => {
   useEffect(() => {
     fetch("https://api.escuelajs.co/api/v1/products")
       .then((response) => response.json())
-      .then((data) => {
-        const normalized = Array.isArray(data)
-          ? data.map(normalizeProduct)
-          : [];
-        setItems(normalized);
-      });
+      .then((data) => setItems(data));
   }, []);
 
   useEffect(() => {

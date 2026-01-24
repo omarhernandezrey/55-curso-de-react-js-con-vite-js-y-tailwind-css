@@ -48,9 +48,7 @@ const CheckoutSideMenu = () => {
             key={product.id}
             id={product.id}
             title={product.title}
-            imageUrl={
-              Array.isArray(product.images) ? product.images[0] : product.images
-            }
+            imageUrl={product.images}
             price={product.price}
             handleDelete={handleDelete}
           />

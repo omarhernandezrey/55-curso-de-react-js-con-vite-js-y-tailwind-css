@@ -196,3 +196,18 @@ Archivos clave:
 - `Navbar (categorías)`: [src/Components/Navbar/index.jsx](src/Components/Navbar/index.jsx)
 - `Context (filtros)`: [src/Context/index.jsx](src/Context/index.jsx)
 - `Home (render)`: [src/Pages/Home/index.jsx](src/Pages/Home/index.jsx)
+
+### 29 Corrigiendo bugs de la aplicación
+
+- Se corrigieron imports sensibles a mayúsculas/minúsculas en WSL/Linux (por ejemplo `Signin`) para evitar errores de Vite al resolver módulos.
+- Se resolvió el warning de Fast Refresh (`react-refresh/only-export-components`) dejando [src/Context/index.jsx](src/Context/index.jsx) exportando solo el Provider y moviendo el contexto a [src/Context/ShoppingCartContext.js](src/Context/ShoppingCartContext.js).
+- Se eliminó el warning `react-hooks/exhaustive-deps` estabilizando la función `filterBy` (helpers fuera del componente).
+- Se corrigieron errores de consola por imágenes inválidas:
+  - Normalización de URLs al consumir la API (fallback para hosts rotos y endpoints que no son imágenes) en [src/Context/index.jsx](src/Context/index.jsx).
+  - Se aseguró que `img src` reciba una URL string (por ejemplo `images[0]`) en [src/Components/ProductDetail/index.jsx](src/Components/ProductDetail/index.jsx), [src/Components/CheckoutSideMenu/index.jsx](src/Components/CheckoutSideMenu/index.jsx) y [src/Components/Card/index.jsx](src/Components/Card/index.jsx).
+
+Archivos clave:
+
+- [src/Pages/App/index.jsx](src/Pages/App/index.jsx)
+- [src/Context/index.jsx](src/Context/index.jsx)
+- [src/Context/ShoppingCartContext.js](src/Context/ShoppingCartContext.js)
